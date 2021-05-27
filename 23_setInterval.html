@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 45px;
+            width: 50px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div id="loader">
+
+        </div>
+    </div>
+    <button onclick="stop()">Stop</button>
+
+</body>
+<script>
+    //setinterval reurns a value(ID), with which we can stop the execution of SetInterval.
+    let myVar = setInterval(start, 1000);
+
+    function start() {
+        document.getElementById('loader').innerHTML += `<h1>Hello</h1>`;
+    }
+
+    function stop() {
+
+        clearInterval(myVar);
+    }
+</script>
+
+</html>

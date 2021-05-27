@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 45px;
+            width: 50px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div id="loader">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto dignissimos neque veritatis et? Earum!.
+        </div>
+    </div>
+    <button onclick="stop()">Stop</button>
+
+</body>
+<script>
+    var myVar = setInterval(() => {
+        let txt = document.getElementById('loader').style.color = 'blue';
+    }, 1000);
+
+    function stop() {
+        clearTimeout(myVar);
+    }
+</script>
+
+</html>
