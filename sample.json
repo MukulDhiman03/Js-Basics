@@ -1,5 +1,10 @@
 {
-    "Name": "MUkul",
+    "Name": "User_name",
     "Roll_no": 36,
-    "Section": "B"
+    "Programmer": true,
+    "Marks": [10, 20, 30, 40, "f"],
+    "Student2": {
+        "name": "student2",
+        "marks": [1, 2, 3, 4, 5, 6]
+    }
 }
