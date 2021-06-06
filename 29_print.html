@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="divone">
+        This is div one.
+        <button onclick="fun('divone')">Print DivOne</button>
+    </div>
+    <div id="divtwo">
+        This is div two.
+        <button onclick="fun('divtwo')" ">Print DivTwo</button>
+
+    </div>
+    
+    <div id="whole ">
+        Print whole.
+        <button onclick="printWhole() "> Print whole</button>
+    </div>
+
+</body>
+<script>
+    function printWhole() {
+        window.print();
+    };
+
+    function fun(param) {
+        let backup = document.body.innerHTML;
+        // console.log(backup)
+        let content = document.getElementById(param).innerHTML;
+        // console.log(content)
+            document.body.innerHTML = content;
+            window.print();
+            document.body.innerHTML = backup;
+    }
+</script>
+
+</html>

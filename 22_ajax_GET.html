@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Event occurs in a webpage.
+
+        An XHMHTTPRequest object (xhr object) is created.
+
+        This object send a request to the server using open() and send();
+
+        Server process the request.
+
+        Server sends the response back to the web page.
+
+
+        */
+
+
+        let fetchBtn = document.getElementById('fetchBtn');
+        fetchBtn.addEventListener('click', eventHandler);
+
+        function eventHandler() {
+
+            console.log("Clicked");
+
+            const xhr = new XMLHttpRequest();
+
+            //open the object
+            xhr.open('GET', 'sample.txt', true);
+
+            //To track the progress (Optional)
+            xhr.onprogress = () => {
+                console.log("On progress");
+            }
+
+            xhr.onreadystatechange = () => {
+                //returns 0,1,2,3,4
+                console.log("Ready State" + xhr.readyState);
+            }
+
+
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText);
+                } else {
+                    console.log("Not Found");
+                }
+            }
+            xhr.send();
+
+        }
+    </script>
+</body>
+
+</html>
